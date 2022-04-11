@@ -63,12 +63,13 @@
             </div>
 
             <!-- Address -->
-            <div>
+            <div class="col-xx-xx">
                 <form action="" class="mt-3">
-                    <input class="w-50 p-2 mb-2" type="text" placeholder="Phone Number">
-                    <input class="w-50 p-2" type="text" placeholder="Address">
+                    <input class="w-50 p-2 mb-2 input-lg" type="text" placeholder="Phone Number">
+                    <!-- <input  type="text" placeholder="Address"> -->
+                    <textarea class="w-50 p-2 input-lg" cols="100" rows="5" placeholder="Address"></textarea>
                    <div>
-                    <button type="submit" class="btn btn-outline-warning mt-3 mb-5 fw-bold rounded-pill">Order Now</button> 
+                    <button type="submit" class="btn btn-outline-warning mt-3 mb-5 fw-bold rounded-pill pl-2">Order Now</button> 
                     <a href="/login" class="btn btn-outline-success mt-3 mb-5 fw-bold rounded-pill" role="button">Login</a>
                    </div>
                 </form>
@@ -76,6 +77,5 @@
         </div>
     </div>
 </section>
-
-</body>
-</html>
+<%- include ('partials/footer') %>
+ 
