@@ -1,0 +1,76 @@
+/* 
+
+p-#fe5f1e
+ph-#b23301
+s-#f8f8f8
+pu-#fff
+d-#232323
+g-#ccc
+
+*/
+
+/* body */
+body {
+    font-family: 'Titillium Web', sans-serif;
+    color: #232323;
+}
+
+/* Navbar */
+/* Cart icon */
+nav li:last-child a {
+    background-color: #fe5f1e;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+nav li:last-child a:hover {
+    background-color: #fe5f1e;
+    border-radius: 5px;
+    background-color: #b23301;
+    transition: all .3 ease-in-out;
+}
+/* Navlinks */
+#navbarSupportedContent li a:hover {
+    color: #fe5f1e;
+    transition: all .3 ease-in-out;
+}
+
+/* Main */
+section.main{
+    background-color:#f8f8f8 ;
+}
+
+/* Menu */
+/* Titles */
+#menu-title{
+    text-align: center;
+    padding: 15px 0 10px;
+}
+/*  section padding~  */
+section.menu-veg{
+    padding-left:30px;
+}
+section.menu-nonveg{
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-left:30px;
+}
+
+/* Cart Page */
+/* card header */
+#cart-header{
+    text-align: center;
+    padding-top: 10px;
+    margin: 5px 0 6px;
+}
+section.cart{
+    background-color:#f8f8f8 ;
+}
+/* Amonut */
+.amount{
+    color:#fe5f1e ;
+}
+
+/* login */
+#login{
+    box-shadow: 0 10px 18px #dbd4d4;
+}
