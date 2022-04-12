@@ -1,27 +1,32 @@
 <%- include ('partials/header') %>
 
-<section class="login d-flex justify-content-center pt-4 mt-5">
-  <div class="w-50">
-   <form id="login" class="p-5">
-    <div class="form-outline mb-4">
-      <label class="form-label" for="name">Email</label>
-      <input type="text" id="name" class="form-control" placeholder="Enter Your Name"/>
-  </div>
-       <div class="form-outline mb-4">
-           <label class="form-label" for="email">Email</label>
-           <input type="email" id="email" class="form-control" placeholder="Enter Your Email"/>
-       </div>
-       <div class="form-outline mb-4">
-           <label class="form-label" for="password">Password</label>
-           <input type="password" id="password" class="form-control" placeholder="***********" />
-       </div>
-       <button type="button" class="btn btn-outline-primary mb-4 rounded-pill">Register</button>
-       <p>
-           <a href="/login">Already have account?</a>
-       </p>
-       </div>
-   </form> 
-  </div>
-</section>  
+<section class="auth">
+    <div id="auth" class="w-third-l mw6-l center-l ph3 container">
+        <h1 class="f2 fw3 black-90">Register</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" data-val="true" data-val-required="Please enter your Name."
+                    id="name" name="text" placeholder="Enter Your Name" required="required" type="text" value="" />
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="Email">Email address</label>
+                <input class="form-control" data-val="true" data-val-required="Please enter your email address."
+                    id="Email" name="Email" placeholder="Enter Your Email" required="required" type="email" value="" />
+            </div>
+            <br>    
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input class="form-control" data-val="true" data-val-required="Please enter your password."
+                    id="Password" name="Password" placeholder="Enter Your Password" required="required" type="password" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary mt-3 mb-3">Register</button>
+            </div>
+        </form>
+        <p class="tc pt3">Already have a acoount? <a href="/login">login</a>.</p>
+    </div>
+</section>
 
 <%- include ('partials/footer') %>
