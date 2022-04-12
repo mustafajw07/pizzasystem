@@ -15,6 +15,7 @@ body {
     color: #232323;
 }
 
+
 /* Navbar */
 /* Cart icon */
 nav li:last-child a {
@@ -34,26 +35,25 @@ nav li:last-child a:hover {
     transition: all .3 ease-in-out;
 }
 
+
 /* Main */
 section.main{
     background-color:#f8f8f8 ;
 }
 
+
 /* Menu */
 /* Titles */
 #menu-title{
     text-align: center;
-    padding: 15px 0 10px;
+    padding-top: 15px;
 }
+
 /*  section padding~  */
 section.menu-veg{
     padding-left:30px;
 }
-section.menu-nonveg{
-    margin-top: 15px;
-    padding-top: 5px;
-    padding-left:30px;
-}
+
 
 /* Cart Page */
 /* card header */
@@ -62,15 +62,18 @@ section.menu-nonveg{
     padding-top: 10px;
     margin: 5px 0 6px;
 }
+
 section.cart{
     background-color:#f8f8f8 ;
 }
+
 /* Amonut */
 .amount{
     color:#fe5f1e ;
 }
 
-/* login */
+
+/* login and register page */
 #auth{
     box-shadow: 0 10px 18px #dbd4d4;
     padding: 20px;   
