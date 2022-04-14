@@ -22,62 +22,22 @@
 
 
 <!-- Menu -->
-<section class="menu-veg">
+<section>
     <div id="menu-title">
         <h1 id="menu-title" class="fw-bold">All Pizza</h1>
     </div>
     <div class="m-3">
         <div class="row">
-            <div class="col-lg-3 col-md-4">
+            <!-- card -->
+            <% pizzas.forEach(function(pizza){ %>
+                <div class="col-lg-3 col-md-4">
                 <div class="card mt-3">
                     <div class="align-item-center text-center pt-2">
                         <img src="/img/pizza.png" alt="pizza img" class="rounded" width="160">
                         <div class="card-body">
-                            <h4 class="card-title">Pizza Name</h4>
-                            <h5 class="card-text">small</h5>
-                            <h6>250/-</h6>
-                        </div>
-                    </div>
-                    <div class="mb-2 cursor text-center">
-                        <button class="btn btn-outline-warning btn-block ">Add to Cart</button>
-                    </div>
-                </div>
-            </div><div class="col-lg-3 col-md-4">
-                <div class="card mt-3">
-                    <div class="align-item-center text-center pt-2">
-                        <img src="/img/pizza.png" alt="pizza img" class="rounded" width="160">
-                        <div class="card-body">
-                            <h4 class="card-title">Pizza Name</h4>
-                            <h5 class="card-text">small</h5>
-                            <h6>250/-</h6>
-                        </div>
-                    </div>
-                    <div class="mb-2 cursor text-center">
-                        <button class="btn btn-outline-warning btn-block ">Add to Cart</button>
-                    </div>
-                </div>
-            </div><div class="col-lg-3 col-md-4">
-                <div class="card mt-3">
-                    <div class="align-item-center text-center pt-2">
-                        <img src="/img/pizza.png" alt="pizza img" class="rounded" width="160">
-                        <div class="card-body">
-                            <h4 class="card-title">Pizza Name</h4>
-                            <h5 class="card-text">small</h5>
-                            <h6>250/-</h6>
-                        </div>
-                    </div>
-                    <div class="mb-2 cursor text-center">
-                        <button class="btn btn-outline-warning btn-block ">Add to Cart</button>
-                    </div>
-                </div>
-            </div><div class="col-lg-3 col-md-4">
-                <div class="card mt-3">
-                    <div class="align-item-center text-center pt-2">
-                        <img src="/img/pizza.png" alt="pizza img" class="rounded" width="160">
-                        <div class="card-body">
-                            <h4 class="card-title">Pizza Name</h4>
-                            <h5 class="card-text">small</h5>
-                            <h6>250/-</h6>
+                            <h4 class="card-title"><%= pizza.name %> </h4>
+                            <h5 class="card-text"><%= pizza.size %></h5>
+                            <h6><%= pizza.price %></h6>
                         </div>
                     </div>
                     <div class="mb-2 cursor text-center">
@@ -85,6 +45,8 @@
                     </div>
                 </div>
             </div>
+          <%  }) %> 
+            <!-- Card end -->
         </div>
     </div>
 </section>
