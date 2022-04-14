@@ -1,16 +1,14 @@
-function initRoutes(app){
-    app.get('/',(req,res) => {
-        res.render('home')
-    })
-    app.get('/cart',(req,res) => {
-        res.render('cart')
-    })
-    app.get('/login',(req,res) => {
-        res.render('login')
-    })
-    app.get('/register',(req,res) => {
-        res.render('register')
-    })
+const authcontroller = require("../app/http/controllers/authController");
+const homeController = require("../app/http/controllers/homeController");
+const cartController = require("../app/http/controllers/user/cartController");
+
+function initRoutes(app) {
+    
+    app.get('/', homeController().index)
+    app.get('/cart', cartController().index)
+    app.get('/login', authcontroller().login)
+    app.get('/register', authcontroller().register)
+    
 }
 
 module.exports = initRoutes;
