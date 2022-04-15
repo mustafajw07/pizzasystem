@@ -34,32 +34,17 @@ nav li:last-child a:hover {
     color: #fe5f1e;
     transition: all .3 ease-in-out;
 }
-
-
 /* Main */
 section.main{
     background-color:#f8f8f8 ;
 }
-
-
 /* Menu */
 /* Titles */
-#menu-title{
-    text-align: center;
-    padding-top: 15px;
-}
 .card{
     box-shadow: 0 10px 18px #dbd4d4;
 }
-
 /* Cart Page */
 /* cart header */
-#cart-header{
-    text-align: center;
-    padding-top: 10px;
-    margin: 5px 0 6px;
-}
-
 section.cart{
     background-color:#f8f8f8 ;
 }
@@ -68,8 +53,6 @@ section.cart{
 .amount{
     color:#fe5f1e ;
 }
-
-
 /* login and register page */
 #auth{
     box-shadow: 0 10px 18px #dbd4d4;
