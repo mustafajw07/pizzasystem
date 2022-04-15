@@ -8,6 +8,7 @@ function initRoutes(app) {
     app.get('/cart', cartController().index)
     app.get('/login', authcontroller().login)
     app.get('/register', authcontroller().register)
+    app.post('/update-cart',cartController().update)
     
 }
 

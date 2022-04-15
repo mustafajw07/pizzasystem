@@ -7,13 +7,22 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('express-flash');
 const MongoDbStore = require('connect-mongodb-session')(session);
+const Noty = require('noty');
+
 
 
 // Middleware
 app.use(flash())
 
+// Global Middleware
+app.use((req,res,next) => {
+  res.locals.session = req.session;
+  next()
+})
+
 // Assets
 app.use(express.static('public'))
+app.use(express.json())
 
 // set template engine
 app.set('view engine', 'ejs');
@@ -42,6 +51,7 @@ app.use(session({
 
 // server
 require("./routes/web")(app);
+
 
 // PORT
 app.listen(PORT, () => console.log('Server Started'));

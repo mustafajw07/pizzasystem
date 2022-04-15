@@ -2,7 +2,7 @@
 
 <section class="cart py-5">
     <!-- empty card -->
-    <div class="empty-cart">
+    <!-- <div class="empty-cart">
         <div class="container">
             <div class="text-center">
                 <h1>Cart Empty</h1>
@@ -16,7 +16,7 @@
             <a href="/" class="btn btn-outline-warning mt-3 mb-5 fw-bold rounded-pill" role="button">Go back</a>  
            </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Order Summary -->
     <div class="order container mx-auto w-50">
@@ -26,35 +26,26 @@
         </div>
 
         <!-- List -->
+        <% for(let pizza of object.values(session.cart.item)) {%> 
         <div class="pizza-list">
             <div class="d-flex text-center my-5">
                 <img style="width: 10%;" src="/img/pizza.png" alt="">
                 <div class="flex-grow-1 ml-4">
-                    <h4>Marina</h4>
-                    <span>MEDIUM</span>
+                    <h4><%= pizza.item.name %> </h4>
+                    <span><%= pizza.item.size %> </span>
                 </div>
-                <span class="flex-grow-1">1 Pcs</span>
-                <span class="flex-grow-1 fw-bold">300</span>
+                <span class="flex-grow-1"><%= pizza.qty %> </span>
+                <span class="flex-grow-1 fw-bold"><%= pizza.item.price * pizza.qty %> </span>
             </div>
         </div>
-        <div class="pizza-list">
-            <div class="d-flex text-center my-5">
-                <img style="width: 10%;" src="/img/pizza.png" alt="">
-                <div class="flex-grow-1 ml-4">
-                    <h4>Marina</h4>
-                    <span>MEDIUM</span>
-                </div>
-                <span class="flex-grow-1">1 Pcs</span>
-                <span class="flex-grow-1 fw-bold">300</span>
-            </div>
-        </div>
+    <% } %>     
         <hr>
 
         <!-- Amount -->
         <div class="text-end py-2">
             <div>
                 <span class="fw-bold fs-5">Total Amount: </span>
-                <span class="amount fw-bold fs-4">300</span>
+                <span class="amount fw-bold fs-4"><%= session.cart.totalPrice %> </span>
             </div>
 
             <!-- Address -->
