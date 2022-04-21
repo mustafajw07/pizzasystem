@@ -1,24 +1,23 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 const path = require('path')
 const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('express-flash');
 const MongoDbStore = require('connect-mongodb-session')(session);
-const Noty = require('noty');
 
-
+// Global Middleware
+app.use(function(req,res,next){
+  res.locals.session = req.session;
+  next();
+});
 
 // Middleware
 app.use(flash())
-
-// Global Middleware
-app.use((req,res,next) => {
-  res.locals.session = req.session;
-  next()
-})
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Assets
 app.use(express.static('public'))
@@ -37,7 +36,7 @@ async function main() {
 // Session store
 let mongoStore = new MongoDbStore ({
   uri: 'mongodb://localhost:27017/pizza',
-  collection : 'session',
+  collection : 'sessions',
 })
 
 //Session config
@@ -51,7 +50,6 @@ app.use(session({
 
 // server
 require("./routes/web")(app);
-
 
 // PORT
 app.listen(PORT, () => console.log('Server Started'));
