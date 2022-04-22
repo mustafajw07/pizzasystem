@@ -44,11 +44,14 @@
                 <textarea class="form-control" cols="100" rows="5" placeholder="Address"></textarea>
 
                 <!-- LOGIN ORDER -->
+                <% if(user) {%> 
                 <div>
                     <button type="submit" class="btn btn-outline-warning mt-3 mb-5 fw-bold rounded-pill pl-2">Order
                         Now</button>
+                        <% } else { %> 
                     <a href="/login" class="btn btn-outline-success mt-3 mb-5 fw-bold rounded-pill"
                         role="button">Login</a>
+                        <% } %> 
                 </div>
             </form>
         </div>

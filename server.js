@@ -8,24 +8,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('express-flash');
 const MongoDbStore = require('connect-mongodb-session')(session);
-
-// Global Middleware
-app.use(function(req,res,next){
-  res.locals.session = req.session;
-  next();
-});
-
-// Middleware
-app.use(flash())
-app.use(bodyParser.urlencoded({extended: true}));
-
-// Assets
-app.use(express.static('public'))
-app.use(express.json())
-
-// set template engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'))
+const passport = require('passport');
 
 // database connection
 main().catch(err => console.log("Connection failed",err));
@@ -47,6 +30,31 @@ app.use(session({
   store : mongoStore,
   cookie : {maxAge : 1000 * 60 * 60 * 24} //24HRS
 }))
+
+// Passport Config
+const passportInit = require('./app/config/passport');
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Middleware
+app.use(flash())
+
+// Assets
+app.use(express.static('public'))
+app.use(express.json())
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Global Middleware
+app.use(function(req,res,next){
+  res.locals.session = req.session;
+  res.locals.user = req.user;
+  next();
+});
+
+// set template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'))
 
 // server
 require("./routes/web")(app);
