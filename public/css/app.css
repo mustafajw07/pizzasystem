@@ -59,3 +59,7 @@ section.cart{
     box-shadow: 0 10px 18px #dbd4d4;
     padding: 20px;   
 }
+/* Order */
+a.link{
+    color: #fe5f1e;
+}

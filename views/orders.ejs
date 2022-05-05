@@ -1,0 +1,40 @@
+<%- include ('partials/header') %>
+
+<section class="orders">
+    <div class="container">
+        <h1 class="fw-bold mb-2">All Orders</h1>
+        <% if(messages.success) {%> 
+        <div id="success-alert" class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            Order Placed Successfully
+        </div>
+        <% } %> 
+        <table class="w-100 table-auto bg-white">
+            <thead>
+                <tr>
+                    <th class="px-2 py-1 text-eft">Order</th>
+                    <th class="px-2 py-1 text-eft">Address</th>
+                    <th class="px-2 py-1 text-eft">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (orders.length) { %>
+                <% orders.forEach((order) => { %>
+                <tr>
+                    <td class="px-2 py-1 border"><a class="link" href="/cart"><%= order._id %> </a></td>
+                    <td class="px-2 py-1 border"><%= order.phone %> </td>
+                    <td class="px-2 py-1 border"><%= order.address %> </td>
+                    <td class="px-2 py-1 border"><%= moment(order.createdAt).format('hh:mm A') %> </td>
+                </tr>
+                <% }) %>
+                <% } else { %>
+                <tr>
+                    <td class="p-3"> <span>No Orders Found!</span></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<%- include ('partials/footer') %>

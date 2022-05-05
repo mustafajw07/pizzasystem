@@ -3,7 +3,7 @@
 <section class="cart py-5">
 
     <!-- Order Summary -->
-    <% if(cart) {%> 
+    <% if(cart) {%>
     <div class="order container mx-auto w-50">
         <div class="text-center pb-3">
             <h2 class="fw-bold ml-4">Order Summary</h2>
@@ -11,7 +11,7 @@
         </div>
 
         <!-- List -->
-        <% for(let pizza of Object.values(cart.items)){ %> 
+        <% for(let pizza of Object.values(cart.items)){ %>
         <div class="pizza-list">
             <div class="d-flex text-center my-5">
                 <img style="width: 10%;" src="/img/pizza.png" alt="">
@@ -23,7 +23,7 @@
                 <span class="flex-grow-1 fw-bold"><%= pizza.item.price * pizza.qty %> </span>
             </div>
         </div>
-    <% } %>     
+        <% } %>
         <hr>
 
         <!-- Amount -->
@@ -34,45 +34,44 @@
             </div>
 
             <!-- Address -->
-            <form action="" class="mt-3">
+            <form action="/orders" method="post" class="mt-3">
                 <div class="form-group mb-3">
-                    <input class="form-control" data-val="true" data-val-required="Please enter your Phone Number."
-                        id="name" name="text" placeholder="Enter Your Phone Number" required="required" type="text"
-                        value="" />
+                    <input class="form-control" name="phone" placeholder="Enter Your Phone Number" type="text" />
                 </div>
-                <textarea class="form-control" cols="100" rows="5" placeholder="Address"></textarea>
+                <textarea class="form-control" name="address" cols="100" rows="5" placeholder="Address"></textarea>
 
                 <!-- LOGIN ORDER -->
-                <% if(user) {%> 
+                <% if(user) {%>
                 <div>
                     <button type="submit" class="btn btn-outline-warning mt-3 mb-5 fw-bold rounded-pill pl-2">Order
                         Now</button>
-                        <% } else { %> 
+                    <% } else { %>
                     <a href="/login" class="btn btn-outline-success mt-3 mb-5 fw-bold rounded-pill"
                         role="button">Login</a>
-                        <% } %> 
+                    <% } %>
                 </div>
             </form>
         </div>
     </div>
-    <% } else { %> 
+    <% } else { %>
     <!-- empty card -->
     <div class="empty-cart">
         <div class="container">
             <div class="text-center">
                 <h1>Cart Empty</h1>
-            <p>
-                You probably haven't ordered a pizza yet.<br>
-                To order a pizza , go to the main page.
-            </p>
+                <p>
+                    You probably haven't ordered a pizza yet.<br>
+                    To order a pizza , go to the main page.
+                </p>
             </div>
-            <img class="w-50 p-3 img-responsive center-block d-block mx-auto" src="/img/empty-cart.png" alt="empty-cart">
-           <div class="text-center">
-            <a href="/" class="btn btn-outline-warning mt-3 mb-5 fw-bold rounded-pill" role="button">Go back</a>  
-           </div>
+            <img class="w-50 p-3 img-responsive center-block d-block mx-auto" src="/img/empty-cart.png"
+                alt="empty-cart">
+            <div class="text-center">
+                <a href="/" class="btn btn-outline-warning mt-3 mb-5 fw-bold rounded-pill" role="button">Go back</a>
+            </div>
         </div>
     </div>
-    <% } %> 
+    <% } %>
 </section>
 
 <%- include ('partials/footer') %>
