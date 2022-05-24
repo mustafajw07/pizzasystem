@@ -27,6 +27,14 @@ function orderController(){
         async index(req,res){
             const orders = await Order.find({customerId : req.user._id},null,{sort:{'createdAt':-1}})
             res.render('orders',{orders:orders,moment:moment})
+        },
+        async show(req,res){
+            const order = await Order.findById(req.params.id)
+            // Authorization
+            if(req.user._id.toString() === order.customerId.toString()){
+                return res.render('singleOrder',{order : order})
+            }
+            return res.redirect('/')
         }
     }
 }

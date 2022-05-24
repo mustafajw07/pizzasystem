@@ -1,0 +1,31 @@
+<%- include ('partials/header') %>
+
+<section class="status">
+    <div class="container mx-auto">
+        <div class="width mx-auto">
+            <div class="d-flex text-center justify-content-between pb-3">
+                <h5 class="fw-bold">Track Delivery Status</h5>
+                <h6 class="bg-white text-success"><%= order._id %> </h6>
+            </div>
+            <ul style="list-style: none;" class="pt-4">
+                <li class="status-line pb-5">
+                    <span>Order placed</span>
+                </li>
+                <li class="status-line pb-5">
+                    <span>Order conformation</span>
+                </li>
+                <li class="status-line pb-5">
+                    <span>Preparation</span>
+                </li>
+                <li class="status-line pb-5">
+                    <span>Out for delivery</span>
+                </li>
+                <li class="status-line">
+                    <span>Compelete</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<%- include ('partials/footer') %>
