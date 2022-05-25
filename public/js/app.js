@@ -1,6 +1,7 @@
 let addToCart = document.querySelectorAll('#add-to-cart')
 let alertmessage = document.querySelector('#success-alert')
 
+
 function updateCart(pizza) {
     axios.post('/update-cart', pizza).then(res => {
         alert ("item added to cart");
@@ -90,3 +91,31 @@ function initAdmin() {
 }
 
 initAdmin();
+
+
+// Step completed and current step class add
+let statuses = document.querySelectorAll(".status-line")
+let order = document.querySelector('#hiddenInput') && document.querySelector('#hiddenInput').value 
+order = JSON.parse(order);
+
+let time = document.createElement('small')
+
+function updateStatus(order){
+    let stepCompleted = true;
+    statuses.forEach((status) => {
+        let data = status.dataset.status 
+        if(stepCompleted){
+            status.classList.add('step-completed')
+        }
+        if(data === order.status){
+            stepCompleted = false
+            time.innerText = new Date(order.updatedAt).toLocaleString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+            status.appendChild(time)
+            if(status.nextElementSibling){
+            status.nextElementSibling.classList.add('current')
+            }
+        }
+    });
+}
+
+updateStatus(order);

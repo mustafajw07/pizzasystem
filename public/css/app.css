@@ -132,3 +132,30 @@ a.link{
     box-shadow: 0 20px 1px 20px #fff;
 }
 
+/* Order grey step done*/
+/* Dots */
+.width ul li.step-completed::before{
+    background: #ccc;
+}
+/* line */
+.width ul li.step-completed span::after{
+    background: #ccc;
+}
+/* text */
+.width ul li.step-completed span{
+    color: #ccc;
+}
+
+/* Order orange current step*/
+/* Text */
+.width ul li.current span {
+    color: #fe5f1e;
+}
+/* Dots */
+.width ul li.current span::after{
+    background: #fe5f1e ;
+}
+/* Time tag */
+.width ul li small{
+    float: right;
+}
