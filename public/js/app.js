@@ -1,5 +1,6 @@
 let addToCart = document.querySelectorAll('#add-to-cart')
 let alertmessage = document.querySelector('#success-alert')
+let socket = io()
 
 
 function updateCart(pizza) {
@@ -88,6 +89,11 @@ function initAdmin() {
         `
         }).join('')
     }
+    socket.on('orderPlaced' , (order) => {
+        orders.unshift(order)
+        orderTableBody.innerHTML = '';
+        orderTableBody.innerHTML = generateMarkup(orders)
+    })
 }
 
 initAdmin();
@@ -101,6 +107,10 @@ order = JSON.parse(order);
 let time = document.createElement('small')
 
 function updateStatus(order){
+    statuses.forEach((status) => {
+        status.classList.remove('step-completed')
+        status.classList.remove('current')
+    })
     let stepCompleted = true;
     statuses.forEach((status) => {
         let data = status.dataset.status 
@@ -119,3 +129,23 @@ function updateStatus(order){
 }
 
 updateStatus(order);
+
+// Socket Io
+// Join
+if(order){
+socket.emit('join',`order_${order._id}`)
+}
+
+//Admin
+let adminAreaPath = window.location.pathname
+if(adminAreaPath.includes('admin')){
+    socket.emit('join',`adminRoom`)
+}
+
+// Event Listen
+socket.on('orderUpdated',(data) => {
+    const updatedOrder = {...order}
+    updatedOrder.status = data.status
+    updateStatus(updatedOrder)
+})
+
