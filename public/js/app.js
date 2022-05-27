@@ -96,9 +96,6 @@ function initAdmin() {
     })
 }
 
-initAdmin();
-
-
 // Step completed and current step class add
 let statuses = document.querySelectorAll(".status-line")
 let order = document.querySelector('#hiddenInput') && document.querySelector('#hiddenInput').value 
@@ -139,6 +136,7 @@ socket.emit('join',`order_${order._id}`)
 //Admin
 let adminAreaPath = window.location.pathname
 if(adminAreaPath.includes('admin')){
+initAdmin();
     socket.emit('join',`adminRoom`)
 }
 

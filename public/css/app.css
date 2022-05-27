@@ -159,3 +159,20 @@ a.link{
 .width ul li small{
     float: right;
 }
+
+@media(max-width:1060px){
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .width{
+        width: 100%;
+    }
+    .width ul li span{
+        font-size: 15px;
+    }.width ul li span::before{
+        font-size: 34px;
+    }
+
+}

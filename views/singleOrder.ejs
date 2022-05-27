@@ -8,23 +8,25 @@
                 <h6 class="bg-white text-success"><%= order._id %> </h6>
                 <input id="hiddenInput" type="hidden" value="<%= JSON.stringify(order) %> ">
             </div>
-            <ul style="list-style: none;" class="pt-4">
-                <li class="status-line pb-5" data-status="order_placed">
-                    <span>Order placed</span>
-                </li>
-                <li class="status-line pb-5" data-status="confirmed">
-                    <span>Order confirmation</span>
-                </li>
-                <li class="status-line pb-5" data-status="prepared">
-                    <span>Preparation</span>
-                </li>
-                <li class="status-line pb-5" data-status="delivered">
-                    <span>Out for delivery</span>
-                </li>
-                <li class="status-line" data-status="completed">
-                    <span>Compelete</span>
-                </li>
-            </ul>
+            <div class="container">
+                <ul style="list-style: none;" class="pt-4">
+                    <li class="status-line pb-5" data-status="order_placed">
+                        <span>Order placed</span>
+                    </li>
+                    <li class="status-line pb-5" data-status="confirmed">
+                        <span>Order confirmation</span>
+                    </li>
+                    <li class="status-line pb-5" data-status="prepared">
+                        <span>Preparation</span>
+                    </li>
+                    <li class="status-line pb-5" data-status="delivered">
+                        <span>Out for delivery</span>
+                    </li>
+                    <li class="status-line" data-status="completed">
+                        <span>Compelete</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
