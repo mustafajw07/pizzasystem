@@ -81,7 +81,7 @@ function authcontroller() {
             })
             user.save().then((user) => {
                 // Login
-                return res.redirect('/login')
+                return res.redirect('/register')
             }).catch(err => {
                 req.flash('error', 'Something went wrong')
                 return res.redirect('/register')

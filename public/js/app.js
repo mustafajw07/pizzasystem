@@ -16,11 +16,6 @@ addToCart.forEach((btn) => {
     })
 })
 
-if(alertmessage){
-    setTimeout(() => {
-        alertmessage.remove()
-    },1000)
-}
 
 // Admin 
 function initAdmin() {
